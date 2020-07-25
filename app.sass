@@ -1,0 +1,190 @@
+*,*::before ,*:after
+  box-sizing: border-box
+
+$primary: #202124
+$primary_rgba: rgba(32,34,36,.8)
+$secondary: #f1f1f1
+
+=profile_imgcolors
+  $colors:   rgb(252, 201, 52), #EE675C,#FF63B8, #4dc7e0  
+  @for $index from 0 through 9
+    @debug #{$index}
+    .convo-wrapper:nth-child(#{$index})
+      .img-tray
+        background: nth($colors, random(length($colors)))
+
+body
+  margin: 0 auto
+  padding: 0
+  background: $primary 
+  color: $secondary
+  font: 400 16px Roboto 
+  +profile_imgcolors()
+
+
+.m-flex
+  display: flex
+  &--inline
+    flex-direction: row
+    justify-content: space-between
+
+  &--fe
+    justify-content: flex-end
+  &--sb
+    justify-content: space-between
+
+
+
+#main_section
+  display: block
+  width: 100%
+  height: 100%
+
+
+.msg-header
+  display: flex
+  width: 100%
+  height: 75px
+  align-items: center
+  align-content: center
+  position: relative
+  z-index: 3
+  margin: 0 auto
+  overflow: hidden auto
+  box-shadow: #2a2b2e
+  transition: boxshadow .35s ease-out
+
+ 
+.nav-top
+  display: flex 
+  flex-direction: row
+  justify-content: flex-end
+  align-items: center
+  text-align: center
+  background: $primary_rgba
+  margin: 0 auto
+  width: 100%
+  height: 75px
+  position: fixed
+  
+  &--flex-right
+    display: flex
+    width: 75%
+    justify-content: space-around
+    align-content: center
+    align-items: center
+
+  #nav_title
+    font: 400 24px Tinos, Roboto
+    letter-spacing: .02rem
+
+
+  i
+    vertical-align: middle
+    font-size: 18px
+
+
+// Conversation section
+#convo-main-container
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  width: 100%
+  margin-top: 10px
+  font: 100 12px Roboto 
+
+.convo-wrapper
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  align-content: center
+  align-items: center
+  align-self: center
+  padding: 10px
+  max-height: 75px
+  &:hover
+    background: rgba(75,75,75,.05)
+    color: #fff
+    transition: .5s ease-in
+
+  .img-tray
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 40px
+    width: 40px
+    border-radius: 50%
+    margin-right: 10px
+    background: #000
+    
+    .profile-img 
+      //using an icon instead of an image for profile image
+      font-size: 22px
+      color: #000
+
+  .msg-preview
+    color: white
+    display: flex
+    margin: auto 0
+    flex-direction: column
+    justify-content: center
+    align-self: center
+    height: 75px
+    padding: 5px 
+
+    h3
+      font: 400 18px Roboto 
+      line-height: .5em
+    p
+      width: clamp(200px,230px,260px)
+      font-family: 'Quicksand', sans-serif
+      color: #9aa0a6
+      font-size: 14px
+      font-weight: 500
+      overflow: hidden
+      text-overflow: ellipsis
+      display: -webkit-box
+      -webkit-line-clamp: 1 // number of lines to show */
+      -webkit-box-orient: vertical
+
+  .date-tray
+    display: block
+    width: 45px
+    small
+      font-size: 12px
+      font-weight: 300
+      align-self: flex-start
+
+
+
+//Floating start app widget
+.action-widget
+  position: fixed
+  bottom: 40px
+  right: 20px
+  width: clamp(150px 300px, 500px)
+  height: 50px
+  display: flex
+  flex-direction:  row
+  justify-content: space-around
+  padding: 10px
+  align-items: center
+  border-radius: 50px
+  background: royalblue
+  color: $secondary
+  font-weight: 400
+  .action-content
+    display: flex
+    flex-direction: row
+    align-items: center
+    align-content: center
+    padding: 5px
+    i
+      padding: 0
+      margin: 0
+      font-size: 28px
+    p 
+      margin: 0
+      padding: 0
+      margin-left: 10px
+        
