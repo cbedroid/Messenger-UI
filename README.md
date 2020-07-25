@@ -1,2 +1,2 @@
-# Messager-UX
-Create replica  mobile text messaging  UX using HTML, CSS, and Javascript
+# Messenger-UX
+Creating a replica mobile text messaging app UI using HTML, CSS, and Javascript
