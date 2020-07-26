@@ -4,6 +4,7 @@
 $primary: #202124
 $primary_rgba: rgba(32,34,36,.8)
 $secondary: #f1f1f1
+$text_secondary: #9aa0a6 
 
 =profile_imgcolors
   $colors:   rgb(252, 201, 52), #EE675C,#FF63B8, #4dc7e0  
@@ -20,6 +21,7 @@ body
   color: $secondary
   font: 400 16px Roboto 
   +profile_imgcolors()
+  overflow-x: hidden
 
 
 .m-flex
@@ -39,6 +41,7 @@ body
   display: block
   width: 100%
   height: 100%
+  padding-left: 5px 
 
 
 .msg-header
@@ -51,7 +54,7 @@ body
   z-index: 3
   margin: 0 auto
   overflow: hidden auto
-  box-shadow: #2a2b2e
+  box-shadow:  #000
   transition: boxshadow .35s ease-out
 
  
@@ -90,9 +93,10 @@ body
   flex-direction: column
   justify-content: space-around
   width: 100%
-  margin-top: 10px
+  margin-top: 2px
   font: 100 12px Roboto 
 
+// Messages 
 .convo-wrapper
   display: flex
   flex-direction: row
@@ -103,8 +107,9 @@ body
   padding: 10px
   max-height: 75px
   &:hover
-    background: rgba(75,75,75,.05)
-    color: #fff
+    cursor: pointer
+    background: rgba(248,249,250,.09)
+    color: #e8eaed
     transition: .5s ease-in
 
   .img-tray
@@ -138,7 +143,7 @@ body
     p
       width: clamp(200px,230px,260px)
       font-family: 'Quicksand', sans-serif
-      color: #9aa0a6
+      color:  #9aa0a6
       font-size: 14px
       font-weight: 500
       overflow: hidden
@@ -188,3 +193,39 @@ body
       padding: 0
       margin-left: 10px
         
+
+
+/*** LANDING SPLASH ***/
+#main_panel_right
+  display: block
+  width: 100%
+  height: 100%
+  background: $primary
+
+
+#landing_hero
+  display: flex
+  flex-direction:  column
+  align-items: center
+  align-content: center
+  justify-content: center
+  position: fixed
+  top: 0
+  left: 20%
+  right: 0
+  bottom: 0 
+  z-index: 1
+
+  img#landing_splash
+    margin: 10px 0 
+    width: 330px
+    height: 330px
+  
+  .title
+    font: 400 24px 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  p.subtitle
+    width: 45%
+    font: 300 18px Roboto
+    color: $text_secondary
+
+
