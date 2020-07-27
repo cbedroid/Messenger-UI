@@ -7,8 +7,9 @@ $secondary: #f1f1f1
 $text_secondary: #9aa0a6 
 
 =profile_imgcolors
-  $colors:   rgb(252, 201, 52), #EE675C,#FF63B8, #4dc7e0  
-  @for $index from 0 through 9
+  $colors:   #{rgb(252, 201, 52)}, #EE675C,#FF63B8, #4dc7e0  
+  @debug  Total #{attr("data-cc")}
+  @for $index from 0 through 18
     @debug #{$index}
     .convo-wrapper:nth-child(#{$index})
       .img-tray
@@ -20,7 +21,7 @@ body
   background: $primary 
   color: $secondary
   font: 400 16px Roboto 
-  +profile_imgcolors()
+  //+profile_imgcolors()
   overflow-x: hidden
 
 

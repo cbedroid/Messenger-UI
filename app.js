@@ -1,16 +1,32 @@
 var test = new Array();
+
 $(document).ready(() => {
+
+  
   //GLOBALS
   const main_section = $("#main_section");
+  const convos = $(".convo-wrapper");
   const mobile_bg = "#" + $(main_section).data("mobile");
   const desktop_bg = "#" + $(main_section).data("desktop");
+  
+  const colors = [ "rgb(252, 201, 52)", "#EE675C", "#FF63B8", "#4dc7e0" ];
+  // Set total numbers of conversation in dataset 
+  // for css profile image color
+  $(main_section).data('cc',convos.length);
+  //window.alert(convos.length);
+
+
   // chck if user is using a mobile device
   const is_mobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
     navigator.userAgent.toLowerCase()
   );
 
   // Set convo panel background color according to device
-  $(".convo-wrapper").each(function () {
+  // Set profile image background color
+  $(convos).each(function () {
+    const random = Math.floor(Math.random() * colors.length);
+    $(this).find('.img-tray').css('background',colors[random]);
+
     this.style.background = is_mobile ? mobile_bg : desktop_bg;
   });
 
@@ -36,7 +52,7 @@ $(document).ready(() => {
   });
 
   // Map first letter of user's name to profile image
-  $(".convo-wrapper").map(function (combo) {
+  $(convos).map(function (combo) {
     const username = $(this).find(".username");
     let text = username.text();
     let profile_icon = $(this).find(".profile-img")[0];
@@ -51,9 +67,9 @@ $(document).ready(() => {
   });
 
   /** ATTACH MOBILE TOUCH/HOVER EVENTS  **/
-  $(".convo-wrapper").on("touchstart click", function (e) {
+  $(convos).on("touchstart click", function (e) {
     // reset all convo background color to default
-    $(".convo-wrapper").each(function () {
+    $(convos).each(function () {
       this.style.background = is_mobile ? mobile_bg : desktop_bg;
     });
     // change color of element being touched/ hover
