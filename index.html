@@ -18,18 +18,30 @@
 </head>
 <body>
   <div class="row no-gutters">
-    <div class="col-12 col-md-3" >
+    <div class="col-12 col-md-4" >
       <section id="main_section" data-cc=0 data-desktop="2a2b2e" data-mobile="202124">
-        <div class="msg-header">
-        <nav class="nav-top">
-          <div class="nav-top--flex-right">
-            <h1 id="nav_title">Messages</h1>
-            <i class="fa fa-search"></i>
-            <i class="fa fa-ellipsis-v"></i>
+        <!-- Message Navigation -->
+        <div class="nav-container">
+          <nav class="navigation">
+            <div class="nav-top">
+              <h1 id="nav_title">Messages</h1>
+              <i class="fa fa-search"></i>
+              <i class="fa fa-ellipsis-v"></i>
+            </div>
+          </nav>
+          <!-- Floating Chat Icon-->
+          <div id="floater">
+            <div class="action-widget ">
+              <div class="action-tray">
+                <div class="action-content">
+                  <i class="material-icons">message</i>
+                  <p id="action_text" style="display: none;">Start Chat</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </nav>
       </div>
-      <!-- Message Navigations -->
+      <!-- Message Conversations -->
       <div id="convo-main-container">
         <div class="convo-wrapper">
           <div class="img-tray"> 
@@ -147,8 +159,6 @@
             <small class="msg-date"> July 15</small>
         </div>  
         </div>
-      </div>
-
 
       <!-- Dummy Convo Duplicants-->
         <div class="convo-wrapper">
@@ -254,16 +264,8 @@
             <small class="msg-date"> July 15</small>
         </div>  
       </div>
-      
-      <!-- Floating Chat Icon-->
-      <div class="action-widget">
-        <div class="action-tray">
-          <div class="action-content">
-            <i class="material-icons">message</i>
-            <p id="action_text" style="display: none;">Start Chat</p>
-          </div>
-        </div>
       </div>
+      
     </section>
   </div>
 

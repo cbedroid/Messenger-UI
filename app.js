@@ -1,20 +1,20 @@
 var test = new Array();
 
 $(document).ready(() => {
-
-  
   //GLOBALS
   const main_section = $("#main_section");
   const convos = $(".convo-wrapper");
   const mobile_bg = "#" + $(main_section).data("mobile");
   const desktop_bg = "#" + $(main_section).data("desktop");
-  
-  const colors = [ "rgb(252, 201, 52)", "#EE675C", "#FF63B8", "#4dc7e0" ];
-  // Set total numbers of conversation in dataset 
-  // for css profile image color
-  $(main_section).data('cc',convos.length);
-  //window.alert(convos.length);
+  const floater = $("#floater");
+  const action_floater = floater.find(".action_text");
+  const float_action_text = $("#action_text");
+  const colors = ["rgb(252, 201, 52)", "#EE675C", "#FF63B8", "#4dc7e0"];
+  let scroll_position;
 
+  // Set total numbers of conversation in dataset
+  // for css profile image color
+  $(main_section).data("cc", convos.length);
 
   // chck if user is using a mobile device
   const is_mobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
@@ -25,31 +25,36 @@ $(document).ready(() => {
   // Set profile image background color
   $(convos).each(function () {
     const random = Math.floor(Math.random() * colors.length);
-    $(this).find('.img-tray').css('background',colors[random]);
+    $(this).find(".img-tray").css("background", colors[random]);
 
     this.style.background = is_mobile ? mobile_bg : desktop_bg;
   });
 
   // Set navigation background color
-  $(".nav-top").css({
-    background: is_mobile ? "rgba(32,34,36,.8)" : desktop_bg,
+  //$(".nav-container").css({ width: "24%" });
+  $(".nav-container").css({
+    background: is_mobile ? mobile_bg : desktop_bg,
   });
 
-  // Hide side panel for mobile devices
-  if (is_mobile) $("#main_panel_right").css("display", "none");
+  // For mobile version
+  // Set floater to fixed position
 
-  // bind floating message icon to scroll event
-  const widget_text = $("#action_text");
-  let scroll_position;
+  if (is_mobile) {
+    // Hide side panel for mobile devices
+    $(floater).toggleClass("mobile-action");
+    $("#main_panel_right").css("display", "none");
 
-  $(window).scroll(function () {
-    if (window.pageYOffset < scroll_position) {
-      $(widget_text).css({ display: "block" });
-    } else {
-      $(widget_text).css({ display: "none" });
-    }
-    scroll_position = window.pageYOffset;
-  });
+    $(window).scroll(function () {
+      if (window.pageYOffset < scroll_position) {
+        $(float_action_text).css({ display: "block" });
+      } else {
+        $(float_action_text).css({ display: "none" });
+      }
+      scroll_position = window.pageYOffset;
+    });
+  } else {
+    $(float_action_text).css({ display: "block" });
+  }
 
   // Map first letter of user's name to profile image
   $(convos).map(function (combo) {
