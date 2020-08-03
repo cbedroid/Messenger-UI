@@ -2,6 +2,7 @@ var test = new Array();
 
 $(document).ready(() => {
   //GLOBALS
+  let scroll_position;
   const main_section = $("#main_section");
   const convos = $(".convo-wrapper");
   const mobile_bg = "#" + $(main_section).data("mobile");
@@ -10,23 +11,34 @@ $(document).ready(() => {
   const action_floater = floater.find(".action_text");
   const float_action_text = $("#action_text");
   const colors = ["rgb(252, 201, 52)", "#EE675C", "#FF63B8", "#4dc7e0"];
-  let scroll_position;
+  
+  // check if user is using a mobile device
+  const is_mobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+    navigator.userAgent.toLowerCase()
+  );
+
+
+  // get navigation width while relative and apy width to fixed position
+  const nav_width = $(".nav-container").width();
+  const nav_height = $(".nav-container").height();
+  if (!is_mobile){
+     const nav_container = $('.nav-container');
+    $(nav_container).addClass('nav_fixed');
+    $(nav_container).width(nav_width);
+    // clear navigation
+    $('#convo-main-container').css('margin-top',nav_height);
+     
+  }
 
   // Set total numbers of conversation in dataset
   // for css profile image color
   $(main_section).data("cc", convos.length);
-
-  // chck if user is using a mobile device
-  const is_mobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
-    navigator.userAgent.toLowerCase()
-  );
 
   // Set convo panel background color according to device
   // Set profile image background color
   $(convos).each(function () {
     const random = Math.floor(Math.random() * colors.length);
     $(this).find(".img-tray").css("background", colors[random]);
-
     this.style.background = is_mobile ? mobile_bg : desktop_bg;
   });
 

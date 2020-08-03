@@ -2,7 +2,8 @@
   box-sizing: border-box; }
 
 body {
-  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
   padding: 0;
   background: #202124;
   color: #f1f1f1;
@@ -21,17 +22,14 @@ body {
 
 #main_section {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   padding-left: 5px; }
 
 .nav-container {
   background: #202124;
-  position: fixed;
-  top: 0;
-  max-width: 500px;
+  width: inherit;
   height: auto;
-  width: 490px;
   display: flex;
   flex-direction: column;
   align-self: flex-start;
@@ -69,20 +67,20 @@ body {
   color: #f1f1f1;
   font-weight: 400;
   box-shadow: 2px 2px 5px #000; }
-  #floater .action-content {
+  #floater .floater-content {
     align-self: flex-start;
     display: flex;
     flex-direction: row;
     align-items: center;
     align-content: center;
     padding: 5px; }
-    #floater .action-content i {
+    #floater .floater-content i {
       padding: 0;
       margin: 0;
       font-size: 28px;
       background: transparent;
       transform: rotateX(180deg); }
-    #floater .action-content p {
+    #floater .floater-content p {
       font-family: "Google Sans", Georgia, "Times New Roman", Times, serif;
       color: #fff;
       margin: 0;
@@ -94,8 +92,7 @@ body {
 .mobile-action {
   position: fixed;
   bottom: 40px;
-  right: 20px;
-  width: clamp(150px 300px, 500px);
+  right: -40px;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -108,9 +105,9 @@ body {
   font-weight: 400; }
 
 #convo-main-container {
-  padding-top: 75px;
   display: flex;
   width: 100%;
+  height: 100%;
   flex-direction: column;
   justify-content: space-around;
   font: 100 12px Roboto; }
@@ -206,3 +203,16 @@ body {
     width: 42%;
     font: 300 18px Roboto;
     color: #9aa0a6; }
+
+.nav_fixed {
+  /* fixed navigation width when position is set to fixed */
+  box-sizing: border-box;
+  padding: 5px;
+  height: 150px;
+  max-height: 150px;
+  position: fixed;
+  top: 1px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100; }
