@@ -26,10 +26,11 @@ Lastly, but most definitely not last... My favorite javascript! I decided to use
 
 Thank you and good night!! Oh and can you smash that thingy.. that uh.. that star button at the top of the screen on your ways out! Thank you!! 
 ### Mobile Design
-<center><p>
-  <img src="https://github.com/cbedroid/Messenger-UI/blob/master/images/WM_mobile_portrait.png" width="45%" height="400px">
-  <img src="https://github.com/cbedroid/Messenger-UI/blob/master/images/WM_mobile_horizontal.png" width="45%" height="400px">
-</p></center>
+<center>
+  <img src="https://github.com/cbedroid/Messenger-UI/blob/master/images/WM_mobile_portrait.png" width="100%" height="400px">
+  </br>
+  <img src="https://github.com/cbedroid/Messenger-UI/blob/master/images/WM_mobile_horizontal.png" width="100%" height="400px">
+</center>
 
 ### Desktop Design
 <center>
