@@ -17,10 +17,9 @@ Design an app thats not only mobile friendly, but can also be use on various dif
 * Create a backend server to host your codes ( optional, but you can earn yourself some "brownie points" for doing so :-) 
 
 ## Summary of Tech Stack
-This appication was built using the lastest and current used design of today era (2020). I chose to built this application using HTML,CSS, and Javascript.
-I decide to use HTML, because it will structure my code nicely and gives a smooth sleek responsive design to my layout. I also wanted to take advantage of the different libraries that can be used with this markup language.
+This appication was built using the lastest technology and design patterns of today era (2020). I chose to built this application using purely HTML,CSS, and Javascript. Using HTML ,CSS, and Javascript, I can quickly structure my code fast and easy giving layouts a smooth sleek responsive design.
 
-For CSS, I decided to go with SASS (Syntactically awesome style sheets) , because it will also structure my code nicely and make it more readable. This framework offers feature like nesting, allowing me to manipulate element easier than the standard css. This will result in better structure and minimizing time to complete the task. Thinking with a team mindset, this will be great for any future developer that may potential join in this project. 
+For CSS, I decided to go with SASS (Syntactically awesome style sheets) , because of it's amazing features. Using Sass, I can apply styles to my layouts faster than normal css. This framework also offers feature like nesting, allowing me to manipulate element easier than the standard css. This will result in better structure and minimizing time to complete the task. Thinking with a team mindset, this will be great for any future developer that may potential join in this project. 
 
 
 ### Mobile Design
